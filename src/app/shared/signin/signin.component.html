@@ -1,0 +1,85 @@
+<section class="signin-page account">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 m-auto">
+        <div class="block text-center">
+          <a routerLink="/">
+            <span class="display-4">AVIATO</span>
+          </a>
+          <h2 class="text-center">Create Your Account</h2>
+
+
+          <form class="text-left clearfix" [formGroup]="myForm" (ngSubmit)="handleSubmitForm()">
+            <div class="form-group">
+              <input type="text" class="form-control" name="name" formControlName="name" placeholder="Your Name">
+            </div>
+            <div *ngIf="myForm.controls.name?.invalid && myForm.controls.name?.touched " class="alert alert-danger">
+              <div *ngIf="myForm.controls.name.errors?.required">
+                 Name Required
+              </div>
+              <div *ngIf="myForm.controls.name.errors?.minlength">
+               <span>Min Lenght for Name is 4 and actualLength is {{myForm.controls.name.errors?.minlength.actualLength}} </span>
+             </div>
+             <div *ngIf="myForm.controls.name.errors?.maxlength">
+              <span>Min Lenght for Name is 15 and actualLength is {{myForm.controls.name.errors?.maxlength.actualLength}} </span>
+           </div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" formControlName="email"  placeholder="Email">
+            </div>
+            <div *ngIf="myForm.controls.email?.invalid && myForm.controls.email?.touched " class="alert alert-danger">
+              <div *ngIf="myForm.controls.email.errors?.required">
+                 Email is Required
+              </div>
+              <div *ngIf="myForm.controls.email.errors?.email">
+               <span>Please write a valid Email</span>
+             </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="phoneNumber" formControlName="phoneNumber"  placeholder="Phone Number">
+              <div *ngIf="myForm.controls.phoneNumber?.invalid && myForm.controls.phoneNumber?.touched " class="alert alert-danger">
+                <div *ngIf="myForm.controls.phoneNumber.errors?.required">
+                  Phone required
+                </div>
+                <div *ngIf="myForm.controls.phoneNumber.errors?.pattern">
+                  Egption Numbers only allowed
+               </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password"  formControlName="password" placeholder="Password">
+              <div *ngIf="myForm.controls.password?.invalid && myForm.controls.password?.touched " class="alert alert-danger">
+                <div *ngIf="myForm.controls.password.errors?.required">
+                  Password Requried
+                </div>
+                <div *ngIf="myForm.controls.password.errors?.maxlength">
+                  MaxLength is 20
+               </div>
+               <div *ngIf="myForm.controls.password.errors?.pattern">
+                <ul>
+                  <li>Password must contain at least Two digit [0-9].</li>
+                  <li>Password must contain at least Three lowercase Latin character [a-z].</li>
+                  <li>Password must contain at least Two uppercase Latin character [A-Z].</li>
+                  <li>Password must contain at least one special character like !@#$&*.</li>
+                  <li>Password must contain a length of at least 8 characters and a maximum of 20 characters.</li>
+                </ul>
+             </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-main text-center">Sign In</button>
+            </div>
+            <p>{{respononse}}</p>
+            <p>{{badRequest}} </p>
+          </form>
+
+
+
+
+          <p class="pt-3">Already hava an account ?<a routerLink="/login"> Login</a></p>
+          <p><a href="forget-password.html"> Forgot your password?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
