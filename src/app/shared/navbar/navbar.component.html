@@ -10,7 +10,7 @@
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
-					<a href="index.html">
+					<a routerLink="">
 						<!-- replace logo here -->
 						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -69,8 +69,8 @@
 								<span class="total-price">$1799.00</span>
 							</div>
 							<ul class="text-center cart-buttons">
-								<li><a href="cart.html" class="btn btn-small">View Cart</a></li>
-								<li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
+								<li><a routerLink="/cart" class="btn btn-small">View Cart</a></li>
+								<li><a routerLink="/checkout" class="btn btn-small btn-solid-border">Checkout</a></li>
 							</ul>
 						</div>
 
@@ -130,34 +130,42 @@
 
 					<!-- Home -->
 					<li class="dropdown px-2">
-						<a href="index.html">Home</a>
+						<a routerLink="">Home</a>
+					</li><!-- / Home -->
+          <li class="dropdown px-2">
+						<a routerLink="/shop">Shop</a>
+					</li><!-- / Home -->
+          <li class="dropdown px-2">
+						<a routerLink="">WOW Deals</a>
+					</li><!-- / Home -->
+          <li class="dropdown px-2">
+						<a routerLink="">Last Chance</a>
 					</li><!-- / Home -->
 
 
 					<!-- Elements -->
-					<li class="dropdown dropdown-slide px-2">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+					<!-- <li class="dropdown dropdown-slide px-2">
+						<a routerLink="shop" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Shop <span
 								class="tf-ion-ios-arrow-down"></span></a>
 						<div class="dropdown-menu">
 							<div class="row">
 
 								<!-- Basic -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
+								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="pricing.html">Pricing</a></li>
-										<li><a href="confirmation.html">Confirmation</a></li>
+										<li><a routerLink="/shop">Shop</a></li>
+										<li><a routerLink="/checkout">Checkout</a></li>
+										<li><a routerLink="/cart">Cart</a></li> -->
+										<!-- <li><a routerLink="confirmation.html">Confirmation</a></li> -->
 
-									</ul>
-								</div>
+									<!-- </ul>
+								</div> -->
 
 								<!-- Layout -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
+								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
 										<li class="dropdown-header">Layout</li>
 										<li role="separator" class="divider"></li>
@@ -165,15 +173,16 @@
 										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
 
 									</ul>
-								</div>
+								</div> -->
 
-							</div><!-- / .row -->
-						</div><!-- / .dropdown-menu -->
-					</li><!-- / Elements -->
+							<!-- </div>
+						</div>
+					</li> -->
+
 
 
 					<!-- Pages -->
-					<li class="dropdown full-width dropdown-slide px-2">
+					<!-- <li class="dropdown full-width dropdown-slide px-2">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Pages <span
 								class="tf-ion-ios-arrow-down"></span></a>
@@ -181,7 +190,7 @@
 							<div class="row">
 
 								<!-- Introduction -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Introduction</li>
 										<li role="separator" class="divider"></li>
@@ -191,10 +200,10 @@
 										<li><a href="coming-soon.html">Coming Soon</a></li>
 										<li><a href="faq.html">FAQ</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Contact -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Dashboard</li>
 										<li role="separator" class="divider"></li>
@@ -203,10 +212,10 @@
 										<li><a href="address.html">Address</a></li>
 										<li><a href="profile-details.html">Profile Details</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Utility -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<ul>
 										<li class="dropdown-header">Utility</li>
 										<li role="separator" class="divider"></li>
@@ -214,22 +223,27 @@
 										<li><a href="signin.html">Signin Page</a></li>
 										<li><a href="forget-password.html">Forget Password</a></li>
 									</ul>
-								</div>
+								</div> -->
 
 								<!-- Mega Menu -->
-								<div class="col-sm-3 col-xs-12">
+								<!-- <div class="col-sm-3 col-xs-12">
 									<a href="shop.html">
 										<img class="img-fluid" src="./assets/images/shop/header-img.jpg" alt="menu image" />
 									</a>
 								</div>
-							</div><!-- / .row -->
-						</div><!-- / .dropdown-menu -->
-					</li><!-- / Pages -->
+							</div>
+
+						</div>
+
+					</li>
+
+
+          <!-- / Pages -->
 
 
 
 					<!-- Blog -->
-					<li class="dropdown dropdown-slide px-2">
+					<!-- <li class="dropdown dropdown-slide px-2">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Blog <span
 								class="tf-ion-ios-arrow-down"></span></a>
@@ -240,10 +254,11 @@
 							<li><a href="blog-grid.html">Blog 2 Columns</a></li>
 							<li><a href="blog-single.html">Blog Single</a></li>
 						</ul>
-					</li><!-- / Blog -->
+					</li> -->
+          <!-- / Blog -->
 
 					<!-- Shop -->
-					<li class="dropdown dropdown-slide">
+					<!-- <li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Elements <span
 								class="tf-ion-ios-arrow-down"></span></a>
@@ -252,47 +267,13 @@
 							<li><a href="buttons.html">Buttons</a></li>
 							<li><a href="alerts.html">Alerts</a></li>
 						</ul>
-					</li><!-- / Blog -->
-				</ul><!-- / .nav .navbar-nav -->
+					</li>
 
+				</ul> -->
+<!--
 			</div>
-			<!--/.navbar-collapse -->
-		</div><!-- / .container -->
-	</nav>
-</section>
 
-<div class="hero-slider">
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(./assets/images/slider/slider-1.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-center">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(./assets/images/slider/slider-3.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-left">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(./assets/images/slider/slider-2.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-right">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+		</div>
+	</nav>
+</section> -->
+
