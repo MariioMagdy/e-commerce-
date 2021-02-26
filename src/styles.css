@@ -2683,5 +2683,9 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   width: 100%;
 }
 
+.slide .item{
+ max-height: 400px !important;
+}
+
 
 /*# sourceMappingURL=style.css.map */

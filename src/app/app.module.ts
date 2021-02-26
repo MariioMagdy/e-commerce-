@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS  } from "@angular/common/http"
 import { FormsModule ,ReactiveFormsModule } from "@angular/forms"
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 
 
 
@@ -46,7 +48,8 @@ import { ForgetpasswordComponent } from './pages/forgetpassword/forgetpassword.c
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule.forRoot()
 
 
   ],
