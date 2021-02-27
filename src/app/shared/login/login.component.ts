@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user/user.service';
 import Swal from 'sweetalert2';
 
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   userlogin:any
 
-  constructor(private _user:UserService, private _router:Router) { }
+  constructor(private _user:UserService, private _router:Router , private activatedRouter:ActivatedRoute) { }
   Toast = Swal.mixin({
     toast: true,
     position: 'top-end',

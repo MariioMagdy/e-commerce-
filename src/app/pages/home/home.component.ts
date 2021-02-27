@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
+import {NavbarComponent } from "../../shared/navbar/navbar.component"
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,19 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
   ]
 })
 export class HomeComponent implements OnInit {
-
+@ViewChild(NavbarComponent,{static:true}) x:NavbarComponent
+clicks=3
   constructor() {
+
+   }
+
+
+
+   addcount(count){
+
+    this.clicks=count
+    console.log(this.clicks);
+    //  console.log(count);
 
    }
 
@@ -24,6 +36,8 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+
   }
 
 }
