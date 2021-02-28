@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { SigninComponent } from './shared/signin/signin.component';
+
 import { LoginComponent } from './shared/login/login.component';
 import { AllproductsComponent } from './pages/allproducts/allproducts.component';
 import { SingleproductComponent } from './pages/singleproduct/singleproduct.component';
@@ -26,6 +26,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { UserInterceptor } from './user.interceptor';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { ForgetpasswordComponent } from './pages/forgetpassword/forgetpassword.component';
+import { SignupComponent } from './shared/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { ForgetpasswordComponent } from './pages/forgetpassword/forgetpassword.c
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    SigninComponent,
+    SignupComponent,
     LoginComponent,
     AllproductsComponent,
     SingleproductComponent,

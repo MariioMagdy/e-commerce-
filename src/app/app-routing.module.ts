@@ -10,11 +10,12 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { PurchaseComponent } from './pages/purchase/purchase.component';
 import { SingleproductComponent } from './pages/singleproduct/singleproduct.component';
 import { LoginComponent } from './shared/login/login.component';
-import { SigninComponent } from './shared/signin/signin.component';
+import { SignupComponent } from './shared/signup/signup.component';
+
 
 const routes: Routes = [
   {path:"home" ,component:HomeComponent},
-  {path:"signin" ,component:SigninComponent},
+  {path:"signup" ,component:SignupComponent},
   {path:"login" ,component:LoginComponent},
   {path:"shop",component:AllproductsComponent, canActivate:[AuthGuard]},
   {path:"shop/productdetalis",component:SingleproductComponent},
