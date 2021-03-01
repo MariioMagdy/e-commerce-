@@ -13,7 +13,7 @@
             <div class="form-group">
               <input type="text" class="form-control" name="fname" formControlName="fname" placeholder="First Name">
             </div>
-             <div *ngIf="myForm.controls.fname?.invalid && myForm.controls.fname?.touched " class="alert alert-danger">
+             <div *ngIf="myForm.controls.fname?.invalid && (myForm.controls.fname?.dirty || myForm.controls.fname?.touched) " class="alert alert-danger">
               <div *ngIf="myForm.controls.username.errors?.required">
                 <span>First Name is required</span>
               </div>
@@ -31,7 +31,7 @@
             <div class="form-group">
               <input type="text" class="form-control" name="lname" formControlName="lname" placeholder="Last Name">
             </div>
-            <div *ngIf="myForm.controls.lname?.invalid && myForm.controls.lname?.touched " class="alert alert-danger">
+            <div *ngIf="myForm.controls.lname?.invalid && (myForm.controls.lname?.dirty || myForm.controls.lname?.touched) " class="alert alert-danger">
               <div *ngIf="myForm.controls.username.errors?.required">
                 <span>Last Name is required</span>
               </div>
@@ -48,7 +48,7 @@
             <div class="form-group">
               <input type="text" class="form-control" name="username" formControlName="username"  placeholder="User Name">
             </div>
-            <div *ngIf="myForm.controls.username?.invalid && myForm.controls.username?.touched " class="alert alert-danger">
+            <div *ngIf="myForm.controls.username?.invalid && (myForm.controls.username?.dirty || myForm.controls.username?.touched) " class="alert alert-danger">
               <div *ngIf="myForm.controls.username.errors?.required">
                 <span>User Name is required</span>
               </div>
@@ -65,7 +65,7 @@
               <input type="email" class="form-control" name="email" formControlName="email"  placeholder="Email">
             </div>
 
-            <div *ngIf="myForm.controls.email?.invalid && myForm.controls.email?.touched " class="alert alert-danger">
+            <div *ngIf="myForm.controls.email?.invalid && (myForm.controls.email?.dirty || myForm.controls.email?.touched) " class="alert alert-danger">
               <div *ngIf="myForm.controls.email.errors?.required">
                  Email is Required
               </div>
@@ -76,12 +76,10 @@
               <span>Max Lenght for Name is 30 and actualLength is {{myForm.controls.username.errors?.maxlength.actualLength}} </span>
             </div>
             </div>
-
-
             <div class="form-group">
               <input type="password" class="form-control" name="password"  formControlName="password" placeholder="Password">
             </div>
-              <div *ngIf="myForm.controls.password?.invalid && myForm.controls.password?.touched " class="alert alert-danger">
+              <div *ngIf="myForm.controls.password?.invalid && (myForm.controls.password?.dirty || myForm.controls.password?.touched) " class="alert alert-danger">
                 <div *ngIf="myForm.controls.password.errors?.required">
                   Password Requried
                 </div>
@@ -98,7 +96,9 @@
                 </ul>
              </div>
               </div>
-
+              <div class="form-group">
+                <input type="text" class="form-control" name="role_id"  formControlName="role_id" hidden>
+              </div>
             <div class="text-center">
               <button type="submit" class="btn btn-main text-center" [disabled]="myForm.invalid">Submit</button>
             </div>

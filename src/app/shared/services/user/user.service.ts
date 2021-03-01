@@ -20,7 +20,7 @@ export class UserService {
     // let data={email,password}
     return this._http.post(`${this.commonURL}/login`,data)
   }
-  allusers():Observable<any>{
-    return this._http.get(`${this.commonURL}/allUsers`)
-  }
+  // allusers():Observable<any>{
+  //   return this._http.get(`${this.commonURL}/allUsers`)
+  // }
 }

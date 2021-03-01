@@ -49,10 +49,15 @@ THEME: Aviato | E-commerce template
 -------------------------------------------------------------------*/
 /*=== MEDIA QUERY ===*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500");
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
+
 }
 
 p {

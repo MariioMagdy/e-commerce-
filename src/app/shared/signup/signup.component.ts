@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {UserService} from "../services/user/user.service"
 import {User} from "../interfaces/user"
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -33,16 +34,19 @@ export class SignupComponent implements OnInit {
       lname: new FormControl("",[Validators.required,Validators.minLength(5),Validators.maxLength(25)]),
       username: new FormControl("",[Validators.required,Validators.minLength(5),Validators.maxLength(25)]),
       email: new FormControl("",[Validators.required,Validators.email,Validators.maxLength(30)]),
-      password:new FormControl("",[Validators.required,Validators.maxLength(20),Validators.minLength(8),Validators.pattern("^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,20}$")])
+      password:new FormControl("",[Validators.required,Validators.maxLength(20),Validators.minLength(8),Validators.pattern("^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,20}$")]),
+      role_id: new FormControl("user",[Validators.required]),
    })
 
 
-  constructor(private _UserService:UserService) { }
+  constructor(private _UserService:UserService, private _router:Router) { }
 
   ngOnInit(): void {
   }
 
   handleSubmitForm(){
+    console.log(this.myForm.value);
+
     this.userData=this.myForm.value
     this._UserService.userData(this.userData).subscribe(res=>{
 
@@ -59,8 +63,12 @@ export class SignupComponent implements OnInit {
           title: 'Signed in successfully'
         })
       }
+      console.log(res);
+
+      localStorage.setItem("token","Bearer " + res.data.token)
+      this._router.navigate(["shop"])
     },err=>{
-      console.log(err.statusText);
+      console.log("check the connection with DataBase");
       this.badRequest=err.statusText
       this.Toast.fire({
         icon: 'error',

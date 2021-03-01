@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { ProductService } from 'src/app/shared/services/product/product.service';
+// import { UserService } from 'src/app/shared/services/user/user.service';
 
 @Component({
   selector: 'app-allproducts',
@@ -8,14 +9,32 @@ import { UserService } from 'src/app/shared/services/user/user.service';
 })
 export class AllproductsComponent implements OnInit {
 
-  constructor(private _allusers:UserService) { }
+  allProducts:any[]=[]
+  p: number = 1;
+  collection: any[] = this.allProducts;
+  constructor(private _allproducts:ProductService) {
+
+    console.log(this.collection);
+
+   }
+
+
 
   ngOnInit(): void {
-    this.allusers()
+    this.getAllProducts()
   }
-  allusers(){
-    this._allusers.allusers().subscribe(res=>{
-      console.log(res);
+
+  getAllProducts():any{
+    this._allproducts.getAllproducts().subscribe(res=>{
+      console.log(res.data);
+      this.allProducts = res.data
+      this.collection =res.data
     })
   }
+  pageChanged(pee:number){
+
+    document.getElementById("top").scrollIntoView()
+
+  }
+
 }

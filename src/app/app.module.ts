@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS  } from "@angular/common/http"
 import { FormsModule ,ReactiveFormsModule } from "@angular/forms"
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import {NgxPaginationModule} from 'ngx-pagination'
 
 
 
@@ -50,9 +51,8 @@ import { SignupComponent } from './shared/signup/signup.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CarouselModule.forRoot()
-
-
+    CarouselModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,
