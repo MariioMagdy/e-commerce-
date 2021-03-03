@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
+import { UserService } from 'src/app/shared/services/user/user.service';
 import {NavbarComponent } from "../../shared/navbar/navbar.component"
 
 @Component({
@@ -13,7 +14,10 @@ import {NavbarComponent } from "../../shared/navbar/navbar.component"
 export class HomeComponent implements OnInit {
 @ViewChild(NavbarComponent,{static:true}) x:NavbarComponent
 clicks=3
+
+
   constructor() {
+
 
    }
 

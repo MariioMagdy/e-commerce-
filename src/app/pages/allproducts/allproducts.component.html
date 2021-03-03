@@ -6,14 +6,14 @@
 			<div class="col-md-3">
 				<div class="widget">
 					<h4 class="widget-title">Sort By</h4>
-					<form method="post" action="#">
-                        <select class="form-control">
-                            <option>Man</option>
-                            <option>Women</option>
-                            <option>Accessories</option>
-                            <option>Shoes</option>
+					          <div>
+                        <select class="form-control" (change)="selectChangeHandler($event)">
+                            <option value="Man">Man</option>
+                            <option value="Women">Women</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Shoes">Shoes</option>
                         </select>
-                    </form>
+                      </div>
 	            </div>
 				<div class="widget product-category">
 					<h4 class="widget-title">Categories</h4>
@@ -78,7 +78,7 @@
 				</div>
 			</div>
 			<div class="col-md-9">
-				<div class="row" id="top" #top>
+				<div class="row" id="top">
 
 			      <div class="col-md-4"  *ngFor="let item of collection | paginate: { itemsPerPage: 100, currentPage: p ,id: 'foo' }">
 

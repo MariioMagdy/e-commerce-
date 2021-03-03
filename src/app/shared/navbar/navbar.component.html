@@ -99,9 +99,23 @@
 						</select>
 					</li><!-- / Languages -->
           <!-- sign in -->
-          <li class="dropdown search dropdown-slide">
-						<a routerLink="/signup">SignUp</a>
-					</li>
+
+          <div *ngIf="!isAuth">
+            <li  class="dropdown search dropdown-slide">
+              <a routerLink="/login">login</a>
+            </li>
+          </div>
+
+
+
+          <div *ngIf="isAuth" (click)="logOut()">
+              <li   class="dropdown search dropdown-slide">
+                <a href="./">logOut</a>
+              </li>
+            </div>
+
+
+
 
 				</ul><!-- / .nav .navbar-nav .navbar-right -->
 			</div>

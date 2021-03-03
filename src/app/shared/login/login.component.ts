@@ -12,13 +12,14 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   userlogin:any
+  // isAuth=true
 
   constructor(private _user:UserService, private _router:Router , private activatedRouter:ActivatedRoute) { }
   Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
-    timer: 3000,
+    timer: 1000,
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -37,8 +38,15 @@ export class LoginComponent implements OnInit {
     this.userlogin=this.myForm.value
     console.log(this.myForm.value);
     this._user.loginUser(this.userlogin).subscribe(res=>{
+      if(res.status === 0){
+        this.Toast.fire({
+          icon: 'error',
+          title: 'user not found'
+        })
 
+      }else{
         console.log(res.token);
+        console.log(res);
         this._user.token=res.token
         this.Toast.fire({
           icon: 'success',
@@ -46,6 +54,9 @@ export class LoginComponent implements OnInit {
         })
         localStorage.setItem("token","Bearer " + res.token)
         this._router.navigate(["shop"])
+        this._user.isAuth=true
+      }
+
     })
   }
 }
