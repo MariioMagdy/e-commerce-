@@ -11,7 +11,7 @@ export class ProductService {
   constructor(private _http:HttpClient) { }
 
   getAllproducts():Observable<any>{
-    return this._http.get(`${this.commonURL}/allProducts`)
+    return this._http.get(`allProducts`)
   }
 
 }
