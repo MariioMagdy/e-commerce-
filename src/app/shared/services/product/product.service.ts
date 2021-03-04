@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  commonURL="http://localhost:3000"
+  commonURL="https://db-ecowmmerce.herokuapp.com"
 
   constructor(private _http:HttpClient) { }
 
   getAllproducts():Observable<any>{
-    return this._http.get(`allProducts`)
+    return this._http.get(`${this.commonURL}/allProducts`)
   }
 
 }
